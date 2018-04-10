@@ -21,16 +21,18 @@ public class MaxHeap {
   }
 
   public static void heapsort(long[] array) {
-    //
-    //TODO: implement the heap sort algorithm. "array" should be sorted in place - i.e., don't create a copy.
-    //NOTE: since this method is static, you can instantiate a MaxHeap using the array parameter.
-    //
+    MaxHeap heap = new MaxHeap(array);
+    while(heap.nextPosition != 0){
+      heap.remove();
+    }
   }
 
   public long remove() {
-    //
-    //TODO: implement this methodl.
-    //
+    long v = values[0];
+    nextPosition--;
+    swap(0, nextPosition);
+    reheapDown(0);
+    return v;
   }
 
 
